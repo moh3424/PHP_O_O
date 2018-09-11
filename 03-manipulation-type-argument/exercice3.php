@@ -40,10 +40,15 @@ class Pompe {
         return $this -> litre ;
     }
 
-    public function donneEssence ($arg){
+    public function donneEssence (Vehicule $v){
+        // Modifier l'objet pompe ($this)
 
-        $donne = $this -> setLitre($arg) - $vehicul -> setLitre($arg) ;
-        return $donne;
+        $this -> setLitre ($this -> getLitre() - ($v->getReservoir() - $v -> getLitre()) );
+
+        //modifier l'objet Vehicule
+
+        $v -> setLitre ($v -> getReservoir());
+        
     }
 
 
@@ -53,7 +58,7 @@ $vehicul = new Vehicule ;
 
 $vehicul -> setLitre ('5');
 
-echo 'Le vehicule à : ' .$vehicul -> getLitre() . ' L .<br>';
+echo 'Le vehicule contient : ' .$vehicul -> getLitre() . ' L .<br>';
 
 $vehicul -> setReservoir ('50');
 
@@ -63,7 +68,12 @@ $pompe = new Pompe;
 
 $pompe -> setLitre ('800');
 
-echo 'le nombre de litre d\'essence a la pompe est de : ' . $pompe -> getLitre() . ' L . <br>';
+echo 'le nombre de litre d\'essence a la pompe est de : ' . $pompe -> getLitre() . ' L . <br> <hr>';
 
 
-echo 'le    ..' . $pompe -> donneEssence(45) . '.<br>';
+$pompe -> donneEssence($vehicul);
+echo 'Après ravitaillement<br>';
+echo 'Le vehicule contien ' . $vehicul -> getLitre() . ' L d\'essence <br>';
+
+echo 'La pompe contien ' . $pompe -> getLitre() . ' L d\'essence <hr>';
+
