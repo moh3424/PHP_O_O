@@ -57,7 +57,40 @@ $pdo = new PDO ('mysql:host=localhost;dbname=entreprise', 'root', '', array(
 
 try{
 
-    $resultat = $pdo -> query("hfshqfjhsghsdh");
+    //$resultat = $pdo -> query("hfshqfjhsghsdh");
+
+    $prenom = 'Amandine';
+    $nom = 'Thoyer';
+
+    // marqueur ? :
+
+       $resultat = $pdo -> prepare ("SELECT * FROM employes WHERE prenom = ? AND nom ?");
+       $resultat -> execute (array(
+            $prenom,
+            $nom
+       ));
+
+       // marqueur nominatif ':' : 
+
+        $resultat = $pdo -> prepare ("SELECT * FROM employes WHERE prenom = :prenom AND nom :nom");
+
+        $resultat -> execute (array(
+            ':nom' => $nom,
+            ':prenom' => $prenom,
+        ));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
