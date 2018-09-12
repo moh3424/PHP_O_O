@@ -22,6 +22,7 @@ class Panier {
 
 }
 
+
 //--------------------
 
 $panier = new Panier; // $panier est un objet de la classe Panier . C'est une instance de la classe Panier. On parle d'instanciation.
