@@ -1,0 +1,28 @@
+
+
+----------------------------
+EXPLICATIONS MINI6FRAMEWORK
+----------------------------
+
+Arborescence :
+--------------
+
+	app/ : Ma configuration de notre application
+	arc/ : Le code PHP et HTML spécifique à notre projet
+	vendor/ : Code général (coeur) de l'application
+	web/ : Repertoire web racine, point d'entrée de notre application 
+	       (inde.php, img/, photo/, JS/, fonts/) . Les assets (ressources).
+
+
+Nature des différents fichiers :
+--------------------------------
+
+app/ 
+	config/
+		parameters.php : Ce fichier contient toutes les informations de connexion
+				à la BDD...et autres paramètres
+
+	config.php : Contient la class Config, dont l'objectif est de récupérer
+			les paramètres et les ervir...
+
+

@@ -64,7 +64,7 @@ try{
 
     // marqueur ? :
 
-       $resultat = $pdo -> prepare ("SELECT * FROM employes WHERE prenom = ? AND nom ?");
+       $resultat = $pdo -> prepare ("SELECT * FROM employes WHERE prenom = ? AND nom = ?");
        $resultat -> execute (array(
             $prenom,
             $nom
@@ -72,7 +72,7 @@ try{
 
        // marqueur nominatif ':' : 
 
-        $resultat = $pdo -> prepare ("SELECT * FROM employes WHERE prenom = :prenom AND nom :nom");
+        $resultat = $pdo -> prepare ("SELECT * FROM employes WHERE prenom = :prenom AND nom = :nom");
 
         $resultat -> execute (array(
             ':nom' => $nom,
@@ -80,8 +80,56 @@ try{
         ));
 
 
+   // marqueur nominatif ':' + bindParam()
+
+   $resultat = $pdo -> prepare ("SELECT * FROM employes WHERE prenom = :prenom AND nom = :nom");
+
+      $resultat -> bindParam (':prenom', $prenom, PDO :: PARAM_STR);
+      $resultat -> bindParam (':nom', $nom, PDO :: PARAM_STR);
+    //   $resultat -> binPram (':telephone', $telephone, PDO :: PARAM_INT);
+      $resultat -> execute ();
 
 
+      //Fetch & fetchAll (requêtre select avec plusieurs résultats)
+
+      // Fetch
+      $resultat = $pdo -> query("SELECT * FROM employes");
+
+      //$resultat = OBJ PDOStatment
+      //$resultat = INEXPLOITABLE
+      //Combien de résultat à la rêquete : PLUSIEURS ===> Boucle
+
+      while($employes = $resultat -> fetch(PDO::FETCH_ASSOC)) {
+          echo '<ul>';
+            foreach($employes as $valeur){
+                echo '<li> ' . $valeur .  '</li>';
+            }
+          echo '</ul>';
+      }
+
+      // FetchAll
+      $resultat = $pdo -> query ("SELECT * FROM employes");
+
+       //$resultat = OBJ PDOStatment
+      //$resultat = INEXPLOITABLE en l'état
+      //Combien de résultat à la rêquete : PLUSIEURS ===> Boucle ou fetchAll
+
+      $employes = $resultat -> fetchAll(PDO::FETCH_ASSOC);
+
+      echo '<pre>';
+        print_r($employes);
+      echo '</pre>';
+
+
+      foreach ($employes as $emp){
+          echo '<h3>' . $emp['prenom'] . '</h3>';
+          echo '<ul>' ;
+            foreach($emp as $valeur){
+                echo '<li>' . $valeur . '</li>';
+            }
+          echo '</ul>';
+
+      }
 
 
 
