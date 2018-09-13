@@ -22,6 +22,6 @@ class config
 
 $config = new Config;
 
-echo '<pre>';
-print_r($config -> getParametersConnect ());
-echo '</pre>';
+// echo '<pre>';
+// print_r($config -> getParametersConnect ());
+// echo '</pre>';
