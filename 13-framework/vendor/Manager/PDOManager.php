@@ -7,7 +7,7 @@ use PDO; // On récupère la classe PDO qui existe dans l'espace global de PHP, 
 
 class PDOManager
 {
-    private static $instance = NULL;
+    private static $instance = NULL;// va contenir un objet PDOManager
     protected $pdo; // Contiendra notre objet PDO
 
     private function __construct(){}//En private, on ne peut plus instancier la classe

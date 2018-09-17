@@ -4,7 +4,7 @@
         //Singleton.class.php
 
 
-//Design Pattern : Litteeralement  "Modèle de conception". Un design pattern c'est une solution qui a été trouvée à un problème rencontré par la communauté.
+//Design Pattern : Litteralement  "Modèle de conception". Un design pattern c'est une solution qui a été trouvée à un problème rencontré par la communauté.
 
 // Singleton :C est la réponse qui a été trouvée à la question : Comment créer une classe pour laquelle il n'existe qu'un seul objet  ! 
 

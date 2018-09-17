@@ -66,3 +66,40 @@ echo 'Panier : ' . $panier -> ajouterProduit () .'<br>';
  * 
  * 
  */
+
+
+class Personnage
+
+{
+
+  private $_force;
+
+  private $_localisation;
+
+  private $_experience;
+
+  private $_degats;
+
+        
+
+  // Nous déclarons une méthode dont le seul but est d'afficher un texte.
+
+  public function parler()
+
+  {
+
+    echo 'Je suis un personnage !';
+
+  }
+
+}
+
+$perso = new personnage;
+$perso->parler();
+echo '<pre>';
+print_r($perso);
+echo '</pre>';
+
+$resultat = $pdo->query("SELECT * FROM livres");
+
+print_r($resultat);
