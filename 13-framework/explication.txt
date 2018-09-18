@@ -76,8 +76,28 @@ vendor/
 
 src/
 	Controller/
-		Produitontroller : Cette classe hérite du controller général, et permet de déclalancher toute les actions liées à l'entité Produit
+		ProduitController : Cette classe hérite du controller général, et permet de déclalancher toute les actions liées à l'entité Produit
 
 
 web/
-	Copier et coller :photo/ (css/, Js/, font/, img/ etc...)
+	View/
+		Produit/
+			Copier et coller :photo/ (css/, Js/, font/, img/ etc...)
+			boutique.php, fiche_produit!;php
+			Ces deux fichiers correspondent aux vues des actions
+			afficheAll(), affiche(), categorie().
+			Nous travaillons maintenant en Objet donc $produit['titre'] devient $produit -> getTitre()
+			Plus tard ces fichiers auront l'extension .html (grâce à la methode render())
+
+		layout.html : Ce fichier constitue la structure des pages du site. Le template.
+		En fonction des sites, il peut y avoir plusieurs layout (homr,CGV (Mentions légales), BackOffice ...)	
+
+
+vendor/
+	Manager/
+		Application.php : Cette classe représente le lancement de notre application.
+		Elle a pur mission, de scruter l'URL, et de lancer le bon controller, et la bonne méthode.
+		C'est notre "interrupteur".
+
+
+

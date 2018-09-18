@@ -8,7 +8,8 @@ $parameters = array (
             'dbname'    => 'site_commerce',
             'login'     => 'root',
             'password'  => ''
-        )
+        ),
+        'url' => 'http://localhost/PHPOO/13-framework/web/' // 
 );
 
 //-------

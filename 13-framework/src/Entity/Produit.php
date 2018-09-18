@@ -45,7 +45,15 @@ class Produit
     }
 
     public function getCategorie (){
-       return  $this -> categoriee ;
+       return  $this -> categorie ;
+    }
+
+    public function setPhoto ($photo){
+        $this -> photo = $photo;
+    }
+
+    public function getphoto (){
+       return  $this -> photo ;
     }
 
     
@@ -90,15 +98,6 @@ class Produit
 
     public function getPublic (){
        return  $this -> public ;
-    }
-
-
-    public function setPhoto ($photo){
-        $this -> photo = $photo;
-    }
-
-    public function getPhoto(){
-       return  $this -> photo ;
     }
 
     public function setPrix ($prix){

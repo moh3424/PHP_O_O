@@ -47,9 +47,11 @@ class ProduitRepository extends EntityRepository
 
         $resultat = $this -> getDb()-> prepare($requete);
 
-        $resultat -> bindParam(':categorie',$categorie, PDO::PARAM_STR);;
+        $resultat -> bindParam(':categorie', $categorie, PDO::PARAM_STR);
 
-        $resultat -> setFetchMode (PDO::FETCH_CLASS, 'Entity\Produit');
+        $resultat -> execute();
+
+        $resultat -> setFetchMode(PDO::FETCH_CLASS, 'Entity\Produit');
 
         $data = $resultat -> fetchAll();
 
@@ -61,7 +63,7 @@ class ProduitRepository extends EntityRepository
         
     }
 
-    public function getAllSuggestions(Produit $produit){
+    public function getAllSuggestions(\Entity\Produit $produit){
 
         $prix        = $produit -> getPrix();
 

@@ -23,8 +23,8 @@ class autoload
 
         require $path;
         //---------------
-        echo '<pre>Autoload : ' . $className . '<br>';
-        echo '=> require "' . $path . '"</pre><hr>';
+        // echo '<pre>Autoload : ' . $className . '<br>';
+        // echo '=> require "' . $path . '"</pre><hr>';
         //-----------
     }
 
