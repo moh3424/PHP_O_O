@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* pour fixer le menu dans la page */
+/*.fixe {
+		  position: fixed;
+}*/
+
+
+body {
+	margin: 5px;
+	border: solid #020202 1px;
+	background-color: rgb(226, 225, 225);
+	font: 1em Roboto, sans-serif;
+}
+
+#wrapper {
+	background: white;
+}
+
+.container {
+	background-color: floralwhite;
+	padding: 5px;
+}
+.aliceblue {
+	background-color: aliceblue;
+}
+
+.olive {
+	background-color: olive;
+}
+
+
+.orange {
+	background-color: orange;
+}
+
+.plum {
+	background-color: plum;
+}
+
+h5 {
+	border-bottom: thin dotted black;
+	border-width: inherit;
+}
+
+.courante {
+	background: white;
+	font-style: oblique;
+}
+/*typos*/
+
+table {
+	font: 1em Georgia, serif;
+}
+.navigation {
+	letter-spacing: 0.1em;
+	font-size: 0.9em;
+}
+
+
+
+
+
+
