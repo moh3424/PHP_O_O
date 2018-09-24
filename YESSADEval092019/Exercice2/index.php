@@ -4,6 +4,7 @@ require_once 'connect.php';
 // Je require le fichier connect.php qui gère la connexion à la BDD "exo1_userslist"
 
 $order = '';
+$errors= array();
 if(isset($_GET['order']) && isset($_GET['column'])){
 
 	if($_GET['column'] == 'lastname')
@@ -46,8 +47,10 @@ if(!empty($_POST)){
 	if(empty($_POST['birthdate'])){
 		$errors[] = 'La date de naissance doit être complétée';
 	}
-	if(empty($_POST['city'])){$errors[] = 'La ville ne peut être vide';}
-	if(count($errors) > 0){ 
+	if(empty($_POST['city'])){
+		$errors[] = 'La ville ne peut être vide';
+	}
+	if(count($errors) < 0){ 
 		// error n'existe pas donc on peut insérer
 		$insertUser = $db->prepare('INSERT INTO users (gender, firstname, lastname, email, birthdate, city) VALUES(:gender, :firstname, :lastname, :email, :birthdate, :city)');
 		$insertUser->bindValue(':gender', $_POST['gender']);
